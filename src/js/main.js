@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CommentForm from '../jsx/comment_form';
-import CommentList from '../jsx/comment_list';
+import CommentForm from './comment_form';
+import CommentList from './comment_list';
 
 class CommentBox extends React.Component {
     render() {
