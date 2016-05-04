@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///webpack:///src/src/style/main.scss"],"names":[],"mappings":"AAAA;EACI,UAAU;EACV,WAAW;CACd","file":"style/app.css","sourcesContent":["html, body {\r\n    margin: 0;\r\n    padding: 0;\r\n}\n\n\n/** WEBPACK FOOTER **\n ** webpack:///src/src/style/main.scss\n **/"],"sourceRoot":""}
