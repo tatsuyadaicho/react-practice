@@ -13,7 +13,7 @@ class CommentBox extends React.Component {
     }
     constructor(props) {
         super(props);
-        this.state = {data: []};
+        this.state = { data: [] };
     }
     loadCommentsFromServer() {
         fetch(this.props.url).
@@ -26,6 +26,10 @@ class CommentBox extends React.Component {
             }).catch(e => console.error(this.props.url, e));
     }
     handleCommentSubmit(comment) {
+        const comments = this.state.data;
+        const newComments = comments.concat([comment]);
+        this.setState({ data: newComments });
+
         console.info('submit', comment);
         fetch(this.props.url, {
             method: 'POST',
@@ -35,12 +39,12 @@ class CommentBox extends React.Component {
             },
             body: JSON.stringify(comment)
         }).then((data) => {
-            this.setState({data: data});
+            this.setState({ data: data });
         }).catch(e => console.error(this.props.url, e));
     }
     componentDidMount() {
         this.loadCommentsFromServer();
-        setInterval(() => { 
+        setInterval(() => {
             this.loadCommentsFromServer();
         }, this.props.pollInterval);
     }
@@ -49,7 +53,7 @@ class CommentBox extends React.Component {
             <div className="commentBox">
                 <h1>Comments</h1>
                 <CommentList data={this.state.data} />
-                <CommentForm onCommentSubmit={comment => this.handleCommentSubmit(comment)} />
+                <CommentForm onCommentSubmit={comment => this.handleCommentSubmit(comment) } />
             </div>
         );
     }
