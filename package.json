@@ -6,11 +6,13 @@
   "scripts": {
     "start": "webpack-dev-server --hot --colors",
     "build": "webpack",
+    "serve": "json-server --watch serve/db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "marked": "^0.3.5",
     "react": "^15.0.2",
     "react-dom": "^15.0.2"
   },
@@ -29,6 +31,7 @@
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.16.1",
+    "json-server": "^0.8.10",
     "node-sass": "^3.6.0",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
